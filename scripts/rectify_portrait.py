@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageOps
 
-root = Path(__file__).resolve().parent
+root = Path(__file__).resolve().parents[1]
 source = ImageOps.exif_transpose(Image.open(root / 'photo.jpeg')).convert('RGB')
 corners = [(0, 179), (944, 192), (944, 1607), (0, 1612)]
 width, height = 945, 1424

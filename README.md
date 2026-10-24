@@ -1,33 +1,45 @@
 # Cathy Belle — artiste peintre
 
-Portfolio statique, inspiré de la galerie du thème Starving Artist, avec une réalisation HTML/CSS/JavaScript personnalisée. Aucun outil de compilation ni service externe.
+Portfolio statique et CV artistique, en HTML, CSS et JavaScript. Aucun outil de compilation ni service externe n’est nécessaire.
+
+## Organisation
+
+```text
+index.html                   Accueil, œuvres, présentation, atelier et contact
+cv.html                      CV, expositions et galerie de photographies
+assets/css/                  Styles communs et styles du CV
+assets/js/                   Catalogue des œuvres et interactions des deux pages
+images/oeuvres/              Peintures florales
+images/rectified/            Peintures abstraites redressées
+images/expositions/          Les 26 photographies issues de l’archive
+images/cathy-belle-atelier.jpg Portrait recadré pour le CV
+images/parcours-map.svg      Carte stylisée des lieux d’exposition
+scripts/                    Scripts de rectification des originaux locaux
+```
 
 ## Aperçu local
 
-Depuis ce dossier : `python -m http.server 8000`, puis ouvrir http://localhost:8000.
+Depuis la racine : `python -m http.server 8000`, puis ouvrir http://localhost:8000.
 
 ## GitHub Pages
 
-Les fichiers du site sont à la racine du dépôt. Dans **Settings → Pages**, choisir **Deploy from a branch**, puis **main** et **/(root)**. Le fichier `.nojekyll` permet de publier le HTML, le CSS et le JavaScript directement.
+Dans **Settings → Pages**, choisir **Deploy from a branch**, **main**, puis **/(root)**. Le fichier `.nojekyll` publie directement les fichiers statiques. Tous les liens sont relatifs et fonctionnent avec un dépôt de projet.
 
 Adresse prévue après activation : https://goyallon.github.io/cathybelle/
 
-Le dépôt peut rester privé avec une offre GitHub compatible (Pro pour un compte personnel). Le site publié est public. Un compte GitHub Free nécessite un dépôt public pour GitHub Pages.
+Un dépôt privé nécessite une offre GitHub compatible (Pro pour un compte personnel). Le site publié est public. GitHub Free nécessite un dépôt public pour Pages.
 
-Pour utiliser un domaine acheté chez OVH, le déclarer dans **Settings → Pages → Custom domain**, configurer sa zone DNS, puis activer **Enforce HTTPS**. Aucun domaine personnalisé n’est configuré tant que le nom définitif n’a pas été fourni.
+Pour un domaine OVH : renseigner le domaine définitif dans **Settings → Pages → Custom domain**, configurer la zone DNS et activer **Enforce HTTPS**. Aucun domaine personnalisé n’est encore configuré.
 
-Tous les chemins sont relatifs pour fonctionner aussi dans un dépôt de projet.
+## Modifier les contenus
 
-## Contenus
+- `assets/js/works.js` : images, titres et descriptions des 12 peintures. Les sept légendes florales restent descriptives en attendant les titres officiels.
+- `index.html` : présentation et coordonnées.
+- `cv.html` : parcours et 26 photos d’exposition, consultables au clic avec navigation au clavier et fermeture par Échap.
+- `assets/css/cv.css` : présentation du CV, carte et galerie responsive.
 
-- `works.js` : fichiers, titres, légendes et textes alternatifs des douze peintures, sans répéter les fichiers identiques.
-- Les sept légendes florales sont descriptives et doivent être remplacées par les titres officiels lorsqu’ils seront fournis.
-- Les titres Rouge Baiser, Vibration Musicale et Carnaval sont retranscrits des photographies.
-- `index.html` : présentation, démarche, atelier et coordonnées, adaptés du document fourni.
-- `cv.html` et `cv.css` : CV artistique, portrait recadré et carte des lieux d’exposition.
-- `style.css` : thème majoritairement blanc, responsive et respect de la préférence de réduction des animations.
-- Les documents ODT, doublons et photographies de travail sont conservés localement et exclus de Git. Seules les images utilisées par le site sont publiées.
+Les photos d’exposition sont présentées sans attribution de date ou de lieu non confirmé. Les documents ODT, archives ZIP, doublons, originaux de travail et outils locaux d’authentification restent exclus de Git. Aucun token n’est stocké dans le dépôt.
 
-La consultation au clic propose les flèches gauche/droite et la touche Échap. Le contact utilise les applications e-mail et téléphone du visiteur.
+Les scripts de rectification s’exécutent depuis `scripts/` et utilisent les photographies originales conservées localement à la racine (Pillow et NumPy requis).
 
 Les œuvres et photographies restent la propriété de leurs ayants droit.

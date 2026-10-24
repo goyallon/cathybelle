@@ -8,7 +8,7 @@ import json
 import numpy as np
 from PIL import Image, ImageOps
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'images' / 'rectified'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 CORNERS = {

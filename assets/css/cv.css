@@ -17,7 +17,7 @@
 
 .cv-places{position:relative;isolation:isolate;gap:60px}
 .cv-places-heading{position:relative;align-self:start;padding-bottom:105%;min-width:0}
-.cv-places-heading::after{content:'';position:absolute;left:-14px;right:-14px;top:210px;bottom:0;background:url('images/parcours-map.svg') center top/100% auto no-repeat;opacity:.92;pointer-events:none}
+.cv-places-heading::after{content:'';position:absolute;left:-14px;right:-14px;top:210px;bottom:0;background:url('../../images/parcours-map.svg') center top/100% auto no-repeat;opacity:.92;pointer-events:none}
 .cv-places .cv-note{max-width:270px;font-size:11px;line-height:1.8}
 .cv-places .cv-venues{column-gap:30px;padding-top:3px}
 .cv-places .cv-venues li{padding-bottom:18px;margin-bottom:18px;border-color:#e7eadf}
@@ -25,3 +25,10 @@
 @media(max-width:720px){.cv-places{gap:28px}.cv-places-heading{padding-bottom:0;min-height:560px}.cv-places-heading::after{top:180px;bottom:0;left:0;right:0;background-size:auto 360px;background-position:left top}.cv-places .cv-note{max-width:340px}}
 @media(max-width:480px){.cv-places-heading{min-height:510px}.cv-places-heading::after{top:180px;background-size:100% auto}}
 @media print{.cv-places-heading{padding-bottom:100%}.cv-places-heading::after{top:180px;opacity:.65}}
+.exhibition-archive{grid-column:1/-1;margin-top:12px;padding-top:30px;border-top:1px solid var(--line)}
+.exhibition-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:26px}.exhibition-heading h3{font:normal 28px/1.3 Georgia,serif;margin:0;color:var(--accent)}.exhibition-heading>span{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.exhibition-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 22px}.exhibition-photo{display:block;min-width:0;width:100%;border:0;background:#fff;padding:0;text-align:left}.exhibition-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;transition:opacity .25s}.exhibition-photo:hover img{opacity:.84}.exhibition-photo>span{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:9px;letter-spacing:.1em;color:var(--muted)}
+.exhibition-modal-top{display:flex;justify-content:space-between;align-items:center;font-size:12px}.exhibition-modal-top button,.exhibition-modal-stage button{border:0;background:#fff;min-width:44px;min-height:44px}.exhibition-modal-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:space-between;gap:20px}.exhibition-modal-stage img{width:auto;max-width:calc(100% - 128px);max-height:100%;object-fit:contain}.exhibition-modal-stage button{font-size:25px}#exhibition-photo-title{text-align:center;font:normal 18px/1.5 Georgia,serif;margin:18px 0 0}
+@media(max-width:900px){.exhibition-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 16px}}
+@media(max-width:620px){.exhibition-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.exhibition-heading{display:block}.exhibition-heading h3{font-size:25px;margin-bottom:8px}.exhibition-modal-stage{gap:0}.exhibition-modal-stage img{max-width:calc(100% - 88px)}#exhibition-photo-title{font-size:15px}}
+@media print{.exhibition-archive,dialog{display:none}}
