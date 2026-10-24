@@ -1,0 +1,14 @@
+# Local credentials and working material are never published.
+git.txt
+*token*
+.local/
+__pycache__/
+*.odt
+photo.jpeg
+* (1).*
+* (2).*
+* (3).*
+/P1000*.JPG
+images/rectified/verification.jpg
+images/rectified/corners.json
+carousel.css
