@@ -4,7 +4,7 @@
 .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 28px}.artwork img{padding:14px}.artwork figcaption{font-size:20px}@media(max-width:620px){.gallery{grid-template-columns:minmax(0,1fr)}.artwork figcaption{font-size:18px}}
 
 .header{position:relative;isolation:isolate;overflow:hidden}
-.header-art{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.23}
-.header-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%}
-.header-art::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#fffffff0 0%,#ffffff90 45%,#ffffff55 100%),linear-gradient(0deg,#fff,transparent 45%)}
+.header-art{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.52}
+.header-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.header-art::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#ffffffa6 0%,#ffffff30 48%,#ffffff10 100%),linear-gradient(0deg,#ffffffb3,transparent 30%)}
 .header>.identity,.header>nav{position:relative;z-index:1}
