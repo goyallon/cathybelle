@@ -35,8 +35,8 @@ Pour un domaine OVH : renseigner le domaine définitif dans **Settings → Pages
 
 - `assets/js/works.js` : images, titres et descriptions des 12 peintures. Les sept légendes florales restent descriptives en attendant les titres officiels.
 - `index.html` : présentation et coordonnées.
-- `cv.html` : parcours et mosaïque de 26 photos en fond de la section des expositions.
-- `assets/css/cv.css` : présentation du CV, carte et mosaïque responsive.
+- `cv.html` : parcours et trois vues d’exposition en fond de la colonne de gauche. Les 26 photos de l’archive sont conservées dans images/expositions/.
+- `assets/css/cv.css` : présentation du CV, carte et fonds photographiques responsive.
 
 Les photos d’exposition sont présentées sans attribution de date ou de lieu non confirmé. Les documents ODT, archives ZIP, doublons, originaux de travail et outils locaux d’authentification restent exclus de Git. Aucun token n’est stocké dans le dépôt.
 
