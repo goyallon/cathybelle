@@ -29,7 +29,7 @@ REFINEMENTS = {
     'P1000156.JPG': [(.011, .034), (.952, .042), (.991, .993), (.005, .997)],
 }
 for name, normalized in CORNERS.items():
-    im = ImageOps.exif_transpose(Image.open(ROOT / name)).convert('RGB')
+    im = ImageOps.exif_transpose(Image.open(ROOT / '.local' / 'originals' / name)).convert('RGB')
     points = np.array([(x * im.width, y * im.height) for x, y in normalized])
     width = round((np.linalg.norm(points[1]-points[0]) + np.linalg.norm(points[2]-points[3])) / 2)
     height = round((np.linalg.norm(points[3]-points[0]) + np.linalg.norm(points[2]-points[1])) / 2)
