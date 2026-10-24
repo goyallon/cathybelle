@@ -27,12 +27,11 @@
 @media print{.cv-places-heading{padding-bottom:100%}.cv-places-heading::after{top:180px;opacity:.65}}
 
 
-.cv-exhibitions{position:relative;isolation:isolate;overflow:hidden}
-.cv-exhibitions>div:not(.exhibition-backdrop){position:relative;z-index:1}
-.exhibition-backdrop{position:absolute;z-index:-1;left:0;top:245px;bottom:65px;width:34%;display:flex;flex-direction:column;gap:26px;pointer-events:none;opacity:.56;mask-image:linear-gradient(to bottom,transparent,#000 5%,#000 92%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 5%,#000 92%,transparent)}
-.exhibition-backdrop img{display:block;width:100%;height:0;flex:1;min-height:0;object-fit:cover;object-position:center;filter:saturate(.65)}
-.exhibition-backdrop::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#ffffff15,#ffffff00 55%,#ffffffa6)}
-.cv-exhibitions .cv-note{max-width:230px}
-@media(max-width:1000px){.exhibition-backdrop{width:32%;top:240px;gap:18px}}
-@media(max-width:720px){.exhibition-backdrop{top:0;bottom:0;left:auto;right:-15%;width:65%;opacity:.08;gap:0}.exhibition-backdrop img{object-position:center}.exhibition-backdrop::after{background:linear-gradient(90deg,#fff,transparent)}}
-@media print{.exhibition-backdrop{opacity:.1}}
+
+.cv-exhibitions{position:relative;isolation:isolate}
+.exhibition-heading{min-width:0}
+.exhibition-backdrop{position:relative;margin-top:38px;display:flex;flex-direction:column;gap:30px;pointer-events:none;opacity:.58;mask-image:linear-gradient(to bottom,#000 95%,transparent);-webkit-mask-image:linear-gradient(to bottom,#000 95%,transparent)}
+.exhibition-backdrop img{display:block;width:100%;height:auto;flex:none;object-fit:contain;filter:saturate(.65)}
+.exhibition-backdrop::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 65%,#ffffff85)}
+@media(max-width:720px){.cv-exhibitions{overflow:hidden}.exhibition-backdrop{position:absolute;top:180px;left:auto;right:0;width:65%;margin:0;gap:30px;z-index:-1;opacity:.08}.exhibition-backdrop::after{background:linear-gradient(90deg,#fff,transparent)}}
+@media print{.exhibition-backdrop{opacity:.15}}
