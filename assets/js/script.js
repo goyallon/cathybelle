@@ -1,16 +1,28 @@
 const gallery = document.querySelector('#gallery');
 const lightbox = document.querySelector('#lightbox');
+const isEnglish = document.documentElement.lang === 'en';
+const siteRoot = new URL('../../', document.currentScript.src);
+const galleryWorks = isEnglish ? artworks.map((work, index) => {
+  const isFloral = work.category === 'Floral';
+  return {
+    ...work,
+    title: work.title.replace('Composition florale', 'Floral composition'),
+    alt: englishArtworkDescriptions[index],
+    detail: isFloral ? 'Descriptive caption. Title to be confirmed.' :
+      work.detail && 'Title transcribed from the photograph. Spelling to be confirmed.'
+  };
+}) : artworks;
 let selected = 0;
 let opener;
-artworks.forEach((work, index) => {
+galleryWorks.forEach((work, index) => {
   const figure = document.createElement('figure');
   figure.className = 'artwork';
   const button = document.createElement('button');
-  button.setAttribute('aria-label', `Agrandir : ${work.title}`);
+  button.setAttribute('aria-label', isEnglish ? `Enlarge ${work.title}` : `Agrandir : ${work.title}`);
   const wrap = document.createElement('span');
   wrap.className = 'image-wrap';
   const image = document.createElement('img');
-  image.src = work.src;
+  image.src = new URL(work.src, siteRoot);
   image.alt = work.alt;
   image.loading = index < 3 ? 'eager' : 'lazy';
   image.decoding = 'async';
@@ -24,7 +36,7 @@ artworks.forEach((work, index) => {
   const title = document.createElement('span');
   title.textContent = work.title;
   const category = document.createElement('small');
-  category.textContent = work.category;
+  category.textContent = isEnglish && work.category === 'Abstraction' ? 'Abstract' : work.category;
   caption.append(title, category);
   figure.append(button, caption);
   gallery.append(figure);
@@ -37,14 +49,14 @@ artworks.forEach((work, index) => {
   });
 });
 function showArtwork(index) {
-  selected = (index + artworks.length) % artworks.length;
-  const work = artworks[selected];
+  selected = (index + galleryWorks.length) % galleryWorks.length;
+  const work = galleryWorks[selected];
   const image = document.querySelector('#art-image');
-  image.src = work.src;
+  image.src = new URL(work.src, siteRoot);
   image.alt = work.alt;
   document.querySelector('#art-title').textContent = work.title;
   document.querySelector('#art-detail').textContent = work.detail;
-  document.querySelector('#art-count').textContent = `${selected + 1} / ${artworks.length}`;
+  document.querySelector('#art-count').textContent = `${selected + 1} / ${galleryWorks.length}`;
 }
 document.querySelector('#close').addEventListener('click', () => lightbox.close());
 document.querySelector('#previous').addEventListener('click', () => showArtwork(selected - 1));
@@ -69,5 +81,6 @@ filters.forEach(button => button.addEventListener('click', () => {
     if (show) visible++;
   });
   filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
-  document.querySelector('#visible-count').textContent = `${visible} œuvre${visible > 1 ? 's' : ''}`;
+  const noun = isEnglish ? 'painting' : 'œuvre';
+  document.querySelector('#visible-count').textContent = `${visible} ${noun}${visible > 1 ? 's' : ''}`;
 }));
